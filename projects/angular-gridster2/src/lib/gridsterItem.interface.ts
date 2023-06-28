@@ -31,6 +31,7 @@ export interface GridsterItem {
   y: number;
   rows: number;
   cols: number;
+  mobileAutoHeight?: boolean;
   layerIndex?: number;
   initCallback?: (item: GridsterItem, itemComponent: GridsterItemComponentInterface) => void;
   dragEnabled?: boolean;
