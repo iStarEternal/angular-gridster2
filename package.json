@@ -4,6 +4,7 @@
   "license": "MIT",
   "sideEffects": false,
   "dependencies": {
+    "husky": "^8.0.3",
     "tslib": "^2.1.0"
   },
   "peerDependencies": {
