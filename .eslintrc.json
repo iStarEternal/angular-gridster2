@@ -1,7 +1,7 @@
 {
-  "extends": "../../.eslintrc.json",
+  "root": true,
   "ignorePatterns": [
-    "!**/*"
+    "projects/**/*"
   ],
   "overrides": [
     {
@@ -10,25 +10,29 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/angular-gridster2/tsconfig.lib.lint.json",
-          "projects/angular-gridster2/tsconfig.spec.json"
+          "tsconfig.lint.json",
+          "tsconfig.spec.json"
         ]
       },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
       "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "gridster",
-            "style": "camelCase"
-          }
-        ],
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": "element",
-            "prefix": "gridster",
-            "style": "kebab-case"
+            "prefix": "app",
+            "style": "kebab-case",
+            "type": "element"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "camelCase",
+            "type": "attribute"
           }
         ]
       }
@@ -36,6 +40,9 @@
     {
       "files": [
         "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
     }
